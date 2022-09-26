@@ -1,0 +1,237 @@
+
+Ejercicio 1. Área y perímetro del rectángulo
+Construye un algoritmo, pseudocódigo y diagrama de flujo tal que, conocida la base y altura
+de un rectángulo, calcule y muestre su área y perímetro.
+Algoritmo ejercicio1
+var
+	Entero: base, altura, area, perimetro
+	Inicio
+		Escribir(“Introduce base”)
+		Leer(base)
+		Escribir(“Introduce altura”)
+		Leer(altura)
+
+		area = base * altura
+		perímetro = 2 * base + 2 * altura
+
+		Escribir(“El área es: “, área)
+		Escribir(“El perímetro es: “, perímetro);
+	Fin
+
+
+Ejercicio 2. Mayor de tres números
+Dados tres números enteros positivos diferentes construya un pseudocódigo que permita
+determinar cuál es el mayor de ellos.
+
+Algoritmo ejercicio2
+
+	var
+	Entero: num1, num2, num3, mayor
+	
+	Inicio
+	//Bucle que pide el numero mientras que el valor introducido sea incorrecto
+
+	Haga
+		Escribir(“Introduce numero 1”)
+		Leer(num1)
+	Mientras (num1 &lt;= 0)
+
+	Haga
+		Escribir(“Introduce numero 2”)
+		Leer(num2)
+	Mientras (num2 &lt;= 0)
+
+	Haga
+		Escribir(“Introduce numero 3”)
+		Leer(num3)
+	Mientras (num3 &lt;= 0)
+
+
+	//Cuando llego a este punto del código, los tres números son correctos
+	//Calculamos el mayor realizando comparaciones por parejas
+	
+		Si (num1 > num2 and num1 > num3) entonces
+			mayor = num1
+		De lo contrario
+			Si (num2 > num1 and num2 > num3) entonces
+				mayor = num2
+			De lo contrario
+				Si (num3 > num1 and num3 > num2) entonces
+					mayor = num3
+				Fin_si
+			Fin_si
+		Fin_si
+
+		//Imprimir el resultado del mayor
+		Escribir(“El mayor es: “, mayor)
+
+	Fin
+
+
+Ejercicio 3. Número de términos y resultado de una serie
+Construya un pseudocódigo tal que, lea un número entero N cualquiera y muestre la cantidad
+de términos y el resultado de la siguiente serie:
+
+Algoritmo ejercicio3
+var
+Entero: N, contador, resultado
+Inicio
+//Bucle que pide el numero N mientras que el valor introducido sea incorrecto
+Haga
+Escribir(“Introduce numero N”)
+Leer(N)
+Mientras (N <= 0)
+
+contador = 2
+resultado = 1
+
+Mientras (contador < N) haga
+Si (contador mod 2 = 0) //par
+resultado = resultado – 1/contador
+De lo contrario //impar
+Resultado = resultado + 1/contador
+Fin_si
+
+//incrementar contador
+contador = contador + 1
+
+Fin_mientras
+
+Escribir(resultado)
+Fin
+
+
+
+
+
+
+Ejercicio 4. Suma de números introducidos por el
+usuario
+
+Escribir el pseudocódigo de un algoritmo que pida números al usuario, tantos como
+el usuario quiera, y los vaya sumando hasta que el usuario decida escribir un 0 en
+cuyo caso el programa mostrará el resultado de la suma de los números introducidos
+y finalizará. 
+
+Algoritmo Suma_numeros
+
+	var
+	Entero:numero, resultado
+	
+	Inicio
+		
+		resultado = 0
+		Mientras (numero != 0) haga
+			Escribir("Introduce un número ")
+			Leer(numero)
+			resultado = resultado + numero
+		De lo contrario
+			Escribir("La suma de los números introducido es de:", resultado)
+		
+	Fin
+	
+	
+Ejercicio 5. Comprobación contraseña de usuario
+Escribir el pseudocódigo de un algoritmo que pida al usuario una clave de acceso, y
+que no le permita seguir hasta que la password introducida sea correcta. Se
+considera que la passwd correcta es “12345”.
+
+
+Algoritmo Suma_numeros
+
+	var
+	Entero: contraseña, numero
+	
+	Inicio
+		contraseña = "12345"
+		
+			Si (numero != contraseña)
+				Escribir("Introduce la contraseña")
+				Leer(numero)
+			De lo contrario
+			Escribir ("Contraseña correcta")
+	Fin
+	
+	
+	
+Ejercicio 6. Estadísticas de las notas de alumnos
+Escribir el pseudocódigo de un algoritmo que pida al usuario el número de alumnos
+de una clase, las notas de cada uno de ellos y calcule la media, la mediana, el máximo
+y el mínimo de las notas; y mostrar los resultados.
+
+Algoritmo Estadística_notas_alumnos
+
+	var
+	Entero: num_alumnos, nota_alumno, suma_notas, contador, media, mediana, max, min
+	
+	Inicio
+		
+		Escribir ("Introduzca el número de alumnos de la clase")
+		Leer(num_alumnos)
+		
+		//Inicializo un contador para sumar todas las notas del numero de alumno que haya introducido el usuario
+		contador =0
+		suma_notas =0
+		
+		Hacer
+			Escribir ("Introduzca la nota del alumno")
+			Leer(nota_alumno)
+			suma_notas = suma_notas + nota_alumno
+			contador = contador + 1
+		Mientras ( contador < num_alumnos ) // la condición para que se salga del bucle (que deje de sumar notas) es que el contador sea mayor que num_alumnos
+		
+		media = suma_notas / num_alumnos
+		Escribir ("La media de todos los alumnos es de:", media)
+				
+		Escribir ("Contraseña correcta")
+		Leer(numero)
+		
+		Escribir ("Contraseña correcta")
+		Leer(numero)
+		
+		
+		
+			Mientras (numero != contraseña) haga
+				Escribir("Introduce la contraseña")
+				Leer(numero)
+			De lo contrario
+			Escribir ("Contraseña correcta")
+	Fin
+	
+	//Escribe un programa que le pida al usuario 10 valores enteros y realice la suma, la media y nos devuelva el máximo y el mínimo.
+
+#include<stdio.h>
+
+int main(){
+	int num[10];
+	int suma=0;
+	float media=0;
+	int i=0;
+	int max=0;
+	int min=0;
+	
+	for(i=0; i<10; i++){
+	
+	printf("Escriba un numero entero positivo\n");
+	scanf("%d", &num[i]);
+	
+	suma += num[i];
+	
+	}
+	printf("El resultado de la suma es: %d\n", suma);
+	
+	media = suma / 10;
+	printf("El resultado de la media es: %f\n", media);
+	
+	if(i == 0){
+		max = num[i];
+		min = num[i];
+	}else{
+		if(num[i] > max){
+			max = num[i];
+		}
+		if(numeros[i] < min){
+			max = num[i];
+		}
+	
+}
